@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="32dp">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editTextWord"
+                android:layout_width="268dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:hint="Adicionar palavra" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Adicionar"
+                android:layout_marginBottom="16dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonGenerate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gerar Desafio"
+                android:layout_marginBottom="16dp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginTop="16dp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:layout_marginTop="16dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>
