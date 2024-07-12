@@ -10,6 +10,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private val wordsList = mutableListOf<String>()
     private val usedWords = mutableSetOf<String>()
+    private var challengeCounter = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,16 +56,16 @@ class MainActivity : AppCompatActivity() {
             usedWords.add(randomWord2)
 
             // Update history text
-            updateHistory()
+            updateHistory(randomWord1, randomWord2)
+
+            // Increment challenge counter
+            challengeCounter++
         } else {
             binding.textViewResult.text = "Adicione pelo menos duas palavras."
         }
     }
 
-    private fun updateHistory() {
-        binding.textViewHistory.text = "Histórico:\n"
-        usedWords.forEachIndexed { index, word ->
-            binding.textViewHistory.append("${index + 1}. $word\n")
-        }
+    private fun updateHistory(word1: String, word2: String) {
+        binding.textViewHistory.append("Desafio $challengeCounter: $word1 $word2\n")
     }
 }
