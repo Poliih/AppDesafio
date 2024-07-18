@@ -4,15 +4,31 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center">
+        android:orientation="vertical">
 
+        <!-- Frame para a tela verde -->
+        <FrameLayout
+            android:id="@+id/greenScreen"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#427a35"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/greenScreenText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:textSize="48sp"
+                android:textStyle="bold" />
+        </FrameLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="521dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginBottom="32dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -21,10 +37,10 @@
                 android:layout_width="264dp"
                 android:layout_height="38dp"
                 android:layout_marginBottom="16dp"
-                android:hint="Adicionar palavra"
-                android:textColor="#081923"
                 android:background="@drawable/rounded_border"
-                android:textAlignment="center" />
+                android:hint="Adicionar palavra"
+                android:textAlignment="center"
+                android:textColor="#081923" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/buttonAdd"
@@ -32,8 +48,8 @@
                 android:layout_height="37dp"
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/rounded_button"
-                android:text="Adicionar"
                 android:gravity="center"
+                android:text="Adicionar"
                 android:textColor="#ffffff"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -51,15 +67,14 @@
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
-
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/textViewResult"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="56dp"
                 android:gravity="center"
-                android:textSize="24sp"
                 android:textColor="#081923"
+                android:textSize="24sp"
                 android:textStyle="bold" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -70,6 +85,95 @@
                 android:gravity="center"
                 android:textColor="#081923"
                 android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <!-- Menu de navegação -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/rounded_menu_background"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:elevation="8dp">
+
+            <!-- Botão Adicionar Palavras -->
+            <LinearLayout
+                android:id="@+id/menuAddWord"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="19.72dp"
+                    android:layout_height="20.99dp"
+                    android:src="@drawable/ic_add_word" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="sans-serif"
+                    android:letterSpacing="0.31"
+                    android:text="Adicionar"
+                    android:textColor="#ffffff"
+                    android:textSize="10.49sp" />
+            </LinearLayout>
+
+            <!-- Botão Gerar Desafio -->
+            <LinearLayout
+                android:id="@+id/menuGenerateChallenge"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="20.99dp"
+                    android:layout_height="20.99dp"
+                    android:src="@drawable/ic_generate_challenge" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="sans-serif"
+                    android:letterSpacing="0.31"
+                    android:text="Desafio"
+                    android:textColor="#ffffff"
+                    android:textSize="10.49sp" />
+            </LinearLayout>
+
+            <!-- Botão Histórico -->
+            <LinearLayout
+                android:id="@+id/menuHistory"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="20.99dp"
+                    android:layout_height="20.99dp"
+                    android:src="@drawable/ic_history" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="sans-serif"
+                    android:letterSpacing="0.31"
+                    android:text="Histórico"
+                    android:textColor="#ffffff"
+                    android:textSize="10.49sp" />
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 </layout>
